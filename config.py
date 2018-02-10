@@ -1,1 +1,1 @@
-ROUTE_PREFIX = '/api'
+ROUTE_PREFIX = '/'
