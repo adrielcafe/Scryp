@@ -1,5 +1,4 @@
 falcon
-falcon-cors
 ujson
 moneywagon
 socketIO_client

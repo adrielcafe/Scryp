@@ -62,5 +62,5 @@ class Block(object):
 def not_found(req, resp):
     resp.status = falcon.HTTP_404
     resp.body = ujson.dumps({
-        'error': 'Not found'
+            'error': 'Not found'
         })
