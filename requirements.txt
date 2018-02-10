@@ -2,3 +2,4 @@ falcon
 ujson
 moneywagon
 socketIO_client
+gunicorn
