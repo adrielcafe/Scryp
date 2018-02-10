@@ -1,1 +1,1 @@
-ROUTE_PREFIX = '/'
+ROUTE_PREFIX = ''
