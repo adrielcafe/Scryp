@@ -16,12 +16,11 @@ Returns the address balance in BTC format (float like 0.00000001), or `null` if 
 `GET /balance/{crypto}/{address}`
 
 Example:
-```
-GET /balance/dash/XgRc7wLNQFHhFSdzmLjiAXZkzL3MgZVLxL
-```
+
+[`GET /balance/dash/Xe1M5THPzTwaegJF8njUP6sKRye3sm3Q5H`](https://scryp.herokuapp.com/balance/dash/Xe1M5THPzTwaegJF8njUP6sKRye3sm3Q5H)
 ```
 {
-	balance: 1.00001
+	balance: 51.7033581
 }
 ```
 
@@ -33,9 +32,8 @@ Returns a list of the address' transactions.
 `GET /transaction/{crypto}/{address}`
 
 Example:
-```
-GET /transaction/ltc/LWvWQ3XMoipFsAqE1EZPQFUovLea7DC1ef
-```
+
+[`GET /transaction/ltc/LWvWQ3XMoipFsAqE1EZPQFUovLea7DC1ef`](https://scryp.herokuapp.com/transaction/ltc/LWvWQ3XMoipFsAqE1EZPQFUovLea7DC1ef)
 ```
 [{
 		amount: 0.16624453,
@@ -65,9 +63,8 @@ Returns a single transaction by their TXID.
 `GET /transaction/{crypto}/single/{txid}`
 
 Example:
-```
-GET /transaction/bch/single/a8213e68c5cb2b6cfc192928dd1135068439e93819df852aade15f4c657a0542
-```
+
+[`GET /transaction/bch/single/a8213e68c5cb2b6cfc192928dd1135068439e93819df852aade15f4c657a0542`](https://scryp.herokuapp.com/transaction/bch/single/a8213e68c5cb2b6cfc192928dd1135068439e93819df852aade15f4c657a0542)
 ```
 {
 	fee: 340,
@@ -111,9 +108,8 @@ Returns the current block.
 `GET /block/{crypto}`
 
 Example:
-```
-GET /block/cloak
-```
+
+[`GET /block/cloak`](https://scryp.herokuapp.com/block/cloak)
 ```
 {
 	previous_hash: "00000000000000000049ec93db50bdfb763d8c77eef7d9867b2e16eba8bc585c",
@@ -137,9 +133,8 @@ Returns a block by their hash.
 `GET /block/{crypto}/{hash}`
 
 Example:
-```
-GET /block/zec/00000000000000000030964e5f4f632e0f20e7c82cfc55acded63fd57dbe65c6
-```
+
+[`GET /block/zec/00000000000000000030964e5f4f632e0f20e7c82cfc55acded63fd57dbe65c6`](https://scryp.herokuapp.com/block/zec/00000000000000000030964e5f4f632e0f20e7c82cfc55acded63fd57dbe65c6)
 ```
 {
 	previous_hash: "0000000000000000004056528bb847ff3e3d2c3124ddfddc7a56ad192e5c57dd",
@@ -157,7 +152,6 @@ GET /block/zec/00000000000000000030964e5f4f632e0f20e7c82cfc55acded63fd57dbe65c6
 }
 ```
 
-
 ### Price
 If you need a more robust Price API take a look at the [CryptoCompare API](https://cryptocompare.com/api/), it's more complete and production ready!
 
@@ -167,9 +161,8 @@ Returns the current price from one cryptocurrency into another.
 `GET /price/{crypto}/{crypto}`
 
 Example:
-```
-GET /price/eth/btc
-```
+
+[`GET /price/eth/btc`](https://scryp.herokuapp.com/price/eth/btc)
 ```
 {
 	price: 0.098933
@@ -182,9 +175,8 @@ Returns the current price from one cryptocurrency into a fiat currency.
 `GET /price/{crypto}/{fiat}`
 
 Example:
-```
-GET /price/eth/eur
-```
+
+[`GET /price/eth/eur`](https://scryp.herokuapp.com/price/eth/eur)
 ```
 {
 	price: 688.75
