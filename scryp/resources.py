@@ -8,7 +8,6 @@ api_block = moneywagon.GetBlock()
 api_balance = moneywagon.AddressBalance()
 api_single_transaction = moneywagon.SingleTransaction()
 api_transactions = moneywagon.HistoricalTransactions()
-api_identify = moneywagon.guess_currency_from_address
 
 class Home(object):
     def on_get(self, req, resp):
@@ -35,13 +34,6 @@ class Balance(object):
                 'balance': balance
             })
 
-class Identify(object):
-    def on_get(self, req, resp, address):
-        cryptos = map(lambda crypto: crypto[0], api_identify(address))
-
-        resp.status = falcon.HTTP_200
-        resp.body = ujson.dumps(cryptos)
-
 class Transactions(object):
     def on_get(self, req, resp, crypto, address = None, txid = None):
         transactions = api_transactions.action(crypto, address) if address \
@@ -51,10 +43,9 @@ class Transactions(object):
         resp.body = ujson.dumps(transactions)
 
 class Block(object):
-    def on_get(self, req, resp, crypto, filter = None):
-        block = api_block.action(crypto, latest = True) if not filter \
-            else api_block.action(crypto, block_number = filter) if type(filter) == int \
-            else api_block.action(crypto, block_hash = filter)
+    def on_get(self, req, resp, crypto, hash = None):
+        block = api_block.action(crypto, block_hash = hash) if hash \
+            else api_block.action(crypto, latest = True)
 
         resp.status = falcon.HTTP_200
         resp.body = ujson.dumps(block)
